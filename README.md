@@ -15,7 +15,7 @@ Follow these steps to install and run the project:
 
 ```bash
 # Clone the project from this repository
-git clone https://github.com/Imbatman2008/todolist-typescript.git
+git clone https://github.com/CuriousSavant/todolist-typescript.git
 
 # Navigate to the project directory
 cd todolist-typescript
