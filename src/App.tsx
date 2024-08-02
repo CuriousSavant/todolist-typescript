@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
-import useTodos from './hooks/useTodos';
-import TodoFilter from './Components/TodoFilter';
-import TodoForm from './Components/TodoForm';
-import TodoList from './Components/TodoList';
+import React, { useState } from "react";
+import useTodos from "./hooks/useTodos";
+import TodoFilter from "./Components/TodoFilter";
+import TodoForm from "./Components/TodoForm";
+import TodoList from "./Components/TodoList";
 
 const TodoApp: React.FC = () => {
-  const { todos, addTodo, toggleCompleted, editTodo, removeTodo, filter, setFilter, setTodos } = useTodos();
-  const [text, setText] = useState<string>('');
+  const {
+    todos,
+    addTodo,
+    toggleCompleted,
+    editTodo,
+    removeTodo,
+    filter,
+    setFilter,
+    setTodos,
+  } = useTodos();
+  const [text, setText] = useState<string>("");
 
   const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
@@ -16,24 +25,25 @@ const TodoApp: React.FC = () => {
     e.preventDefault();
     if (text.trim()) {
       addTodo(text);
-      setText('');
+      setText("");
     }
   };
 
   const handleEditPrompt = (index: number, currentText: string) => {
-    const newText = prompt('Edit Todo:', currentText);
-    if (newText !== null && newText.trim() !== '') {
-      if (!todos[index].Completed) {
-        editTodo(index, newText);
-      } else {
-        alert('Please camcel Complete before editing.')
-      }
+    const newText = prompt("Edit Todo:", currentText);
+    if (newText !== null && newText.trim() !== "") {
+      editTodo(index, newText);
     }
   };
 
   return (
-    <div className='h-screen bg-slate-500'>
-      <TodoForm text={text} onChangeInput={handleChangeInput} onSubmit={handleSubmit} setTodos={setTodos} />
+    <div className="h-screen bg-slate-500">
+      <TodoForm
+        text={text}
+        onChangeInput={handleChangeInput}
+        onSubmit={handleSubmit}
+        setTodos={setTodos}
+      />
       <TodoFilter filter={filter} setFilter={setFilter} />
       <TodoList
         filterTodo={todos}
