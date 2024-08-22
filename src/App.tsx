@@ -37,7 +37,7 @@ const TodoApp: React.FC = () => {
   };
 
   return (
-    <div className="h-screen bg-slate-500">
+    <>
       <TodoForm
         text={text}
         onChangeInput={handleChangeInput}
@@ -51,7 +51,7 @@ const TodoApp: React.FC = () => {
         editPrompt={handleEditPrompt}
         removeTodo={removeTodo}
       />
-    </div>
+    </>
   );
 };
 

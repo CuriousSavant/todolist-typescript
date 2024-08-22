@@ -16,12 +16,14 @@ const TodoForm: React.FunctionComponent<TodoProps> = ({
   return (
     <>
       <form
-        className="max-w-md mx-auto bg-slate-300 px-4 py-2 rounded-lg mb-4"
+        className="max-w-md mx-auto bg-slate-300 px-4 py-2 rounded-lg mb-4 mt-4"
         onSubmit={onSubmit}
       >
         <input
+          className="w-full bg-slate-200 outline-none rounded-lg px-3 
+          py-2 text-black focus:border-[3.4px] smooth focus:border-blue-500"
           type="text"
-          className="w-full bg-slate-200 outline-none rounded-lg px-3 py-2 text-black focus:border-[3.4px] focus:border-blue-500"
+          autoFocus
           onChange={onChangeInput}
           value={text}
         />
