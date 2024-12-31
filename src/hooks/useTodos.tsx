@@ -38,7 +38,7 @@ const useTodos = () => {
     setTodos(todos.filter((_, i) => i !== index));
   };
 
-  const filteredTodos = todos.filter((todo) => {
+  const filteredTodos = todos.filter((todo) => { 
     if (filter === "completed") return todo.Completed;
     if (filter === "incompleted") return !todo.Completed;
     return true;

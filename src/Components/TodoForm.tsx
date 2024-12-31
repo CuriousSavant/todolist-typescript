@@ -4,7 +4,7 @@ interface TodoProps {
   text: string;
   onChangeInput: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
-  setTodos: Function;
+  setTodos: React.Dispatch<string>;
 }
 
 const TodoForm: React.FunctionComponent<TodoProps> = ({
